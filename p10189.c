@@ -32,13 +32,13 @@ int main()
     char **campo;
     char *atual;
 
+    scanf("%d %d", &linhas, &colunas);
+
     while (1)
     {
-        scanf("%d %d", &linhas, &colunas);
-        if (linhas == 0 && colunas == 0)
-        {
-            break;
-        }
+        
+
+        
 
         linha_atual = 0;
         campo = (char **)malloc(sizeof(char *) * linhas);
@@ -68,7 +68,7 @@ int main()
             }
         }
 
-        printf("\nField #%d:\n", field);
+        printf("Field #%d:\n", field);
         field++;
         for (i = 0; i < linhas; i++)
         {
@@ -76,9 +76,17 @@ int main()
             {
                 printf("%c", campo[i][j] == '.' ? '0' : campo[i][j]);
             }
+
             printf("\n");
+            
         }
-        
+
+        scanf("%d %d", &linhas, &colunas);
+        if (linhas == 0 && colunas == 0)
+        {
+            break;
+        }
+        printf("\n");
     }
 
     return 0;
